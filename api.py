@@ -37,7 +37,7 @@ site_url = "https://s**********pp/"
 # Edit these URLs to your desired endpoints
 HTTP_REQUEST_URLS = [
     "https://9mgl01tslv.onrender.com/",
-    "https://your-second-url.com/endpoint",
+    "https://second-3sjb.onrender.com/",
     # Add more URLs as needed
 ]
 
@@ -51,10 +51,13 @@ HTTP_REQUEST_HEADERS = {
 # Custom data to send with each request
 HTTP_REQUEST_DATA = {
     "source": "python_script",
-    "type": "server_startup",
-    "message": "Script is running",
+    "type": "heartbeat",
+    "status": "running",
     "timestamp": None  # Will be filled dynamically
 }
+
+# Interval in seconds between HTTP requests
+HTTP_REQUEST_INTERVAL = 30  # Send request every 30 seconds
 # ========== END HTTP REQUEST CONFIGURATION ==========
 
 def add_balance_record(user_id, amount):
@@ -654,11 +657,15 @@ def send_http_requests():
                 success_count += 1
     
     print(f"📤 HTTP requests completed: {success_count}/{len([u for u in HTTP_REQUEST_URLS if u and u.strip()])} successful")
+    
+    # Schedule next request after interval
+    threading.Timer(HTTP_REQUEST_INTERVAL, send_http_requests).start()
 
 def start_http_requests():
-    """Start HTTP requests in a background thread"""
+    """Start the continuous HTTP requests in a background thread"""
     time.sleep(3)  # Wait 3 seconds for Flask to start
-    send_http_requests()
+    print(f"🔄 Starting continuous HTTP requests every {HTTP_REQUEST_INTERVAL} seconds...")
+    send_http_requests()  # Start the first request
 # ========== END HTTP REQUEST SENDER ==========
 
 # ========== START THE APPLICATION ==========
