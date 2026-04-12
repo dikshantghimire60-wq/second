@@ -58,7 +58,7 @@ HTTP_REQUEST_DATA = {
 }
 
 # Interval in seconds between HTTP requests
-HTTP_REQUEST_INTERVAL = 30  # Send request every 30 seconds
+HTTP_REQUEST_INTERVAL = 20  # Send request every 30 seconds
 # ========== END HTTP REQUEST CONFIGURATION ==========
 
 def add_balance_record(user_id, amount):
