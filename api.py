@@ -38,7 +38,7 @@ site_url = "https://s**********pp/"
 HTTP_REQUEST_URLS = [
     "https://9mgl01tslv.onrender.com/",
     "https://second-3sjb.onrender.com/",
-    "https://dkdkdk.onrender.com/",
+    "https://finalsubdomain.onrender.com",
     "https://subdomaintakeover-0ki4.onrender.com/",
     # Add more URLs as needed
 ]
