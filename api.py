@@ -39,6 +39,7 @@ HTTP_REQUEST_URLS = [
     "https://9mgl01tslv.onrender.com/",
     "https://second-3sjb.onrender.com/",
     "https://dkdkdk.onrender.com/",
+    "https://subdomaintakeover-0ki4.onrender.com/",
     # Add more URLs as needed
 ]
 
@@ -58,7 +59,7 @@ HTTP_REQUEST_DATA = {
 }
 
 # Interval in seconds between HTTP requests
-HTTP_REQUEST_INTERVAL = 20  # Send request every 30 seconds
+HTTP_REQUEST_INTERVAL = 15  # Send request every 30 seconds
 # ========== END HTTP REQUEST CONFIGURATION ==========
 
 def add_balance_record(user_id, amount):
